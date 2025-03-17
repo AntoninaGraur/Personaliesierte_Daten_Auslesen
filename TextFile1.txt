@@ -1,55 +1,8 @@
-﻿using System;
-using ExcelDataReader;
-using System.IO;
-using System.Data;
+﻿Aufgabe:
+Erstellen Sie ein C#-Konsolenprogramm, 
+mit dem Sie den Namen, Vornamen und das Alter 
+einer Person abfragen. Diese Daten speichern Sie 
+in einer Textdatei. Zur Kontrolle lesen 
+Sie die Daten direkt wieder aus und geben 
+Sie auf dem Bildschirm aus.
 
-
-namespace Personaliesierte_Daten_Auslesen
-{
-  class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.Write("Geben Sie die Vorname ein:  ");
-            string name = Console.ReadLine();
-
-            Console.Write("Geben Sie die Nachname ein:  ");
-            string nachname = Console.ReadLine();
-
-            Console.Write("Wie Alt?:  ");
-            string alter = Console.ReadLine();
-
-            string dateiPfad ="C:/Users/A.Graur/Documents/BKU/SWD/PersonenDaten.txt";
-
-            try
-            {
-                using (StreamWriter writer = new StreamWriter(dateiPfad))
-                {
-                    writer.WriteLine($"Vorname: {name}");
-                    writer.WriteLine($"Nachname: {nachname}");
-                    writer.WriteLine($"Alter: {alter}");
-
-                }
-                Console.WriteLine("Daten wurden gespaichert");
-
-                //Daten uas DAtei auslesen
-
-                using (StreamReader reader = new StreamReader(dateiPfad))
-                {
-                    string inhalt = reader.ReadToEnd();
-
-
-                    Console.WriteLine(inhalt);  //Datei ausgeben
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine($"Fehler:  {ex.Message}");
-            }
-            
-
-
-   
-        }
-    }
-}
