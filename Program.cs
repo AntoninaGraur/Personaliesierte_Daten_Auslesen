@@ -10,27 +10,28 @@ namespace Personaliesierte_Daten_Auslesen
     {
         static void Main(string[] args)
         {
-            Console.Write("Geben Sie die Vorname ein:  ");
+            Console.Write(" Geben Sie die Vorname ein:  ");
             string name = Console.ReadLine();
 
-            Console.Write("Geben Sie die Nachname ein:  ");
+            Console.Write(" Geben Sie die Nachname ein:  ");
             string nachname = Console.ReadLine();
 
-            Console.Write("Wie Alt?:  ");
+            Console.Write(" Wie Alt?:  ");
             string alter = Console.ReadLine();
 
             string dateiPfad ="C:/Users/A.Graur/Documents/BKU/SWD/PersonenDaten.txt";
+            Console.WriteLine("\n Daten wurden gespaichert");
 
             try
             {
                 using (StreamWriter writer = new StreamWriter(dateiPfad))
                 {
-                    writer.WriteLine($"Vorname: {name}");
-                    writer.WriteLine($"Nachname: {nachname}");
-                    writer.WriteLine($"Alter: {alter}");
+                    writer.WriteLine($"\n Vorname: {name}");
+                    writer.WriteLine($" Nachname: {nachname}");
+                    writer.WriteLine($" Alter: {alter}");
 
                 }
-                Console.WriteLine("Daten wurden gespaichert");
+               
 
                 //Daten uas DAtei auslesen
 
