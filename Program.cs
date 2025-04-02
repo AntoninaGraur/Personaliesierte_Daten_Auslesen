@@ -20,12 +20,12 @@ namespace Personaliesierte_Daten_Auslesen
             string alter = Console.ReadLine();
 
             string dateiPfad ="C:/Users/A.Graur/Documents/BKU/SWD/PersonenDaten.txt";
-            Console.WriteLine("\n Daten wurden gespaichert");
+            Console.WriteLine("\n Daten wurden gespe ichert");
 
             try
             {
                 using (StreamWriter writer = new StreamWriter(dateiPfad))
-                {
+                { 
                     writer.WriteLine($"\n Vorname: {name}");
                     writer.WriteLine($" Nachname: {nachname}");
                     writer.WriteLine($" Alter: {alter}");
@@ -39,6 +39,7 @@ namespace Personaliesierte_Daten_Auslesen
                 {
                     string inhalt = reader.ReadToEnd();
 
+                    Console.WriteLine("\n Daten wurden ausgelehsen");
 
                     Console.WriteLine(inhalt);  //Datei ausgeben
                 }
